@@ -1,0 +1,75 @@
+<?php
+
+include './connection.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    if (empty($email) || empty($password)) {
+        $response["status"] = "error";
+        $response["message"] = "Please fill out all fields.";
+        echo json_encode($response);
+        exit;
+    }
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $check_user = $mysqli->prepare('SELECT email FROM users WHERE email=?');
+    $check_user->bind_param('s', $email);
+    $check_user->execute();
+    $check_user->store_result();
+    $user_exists = $check_user->num_rows();
+
+    if ($user_exists > 0) {
+        $response["status"] = "error";
+        $response["message"] = "email already exists.";
+    } else {
+        $query = $mysqli->prepare('INSERT INTO users (email, password) VALUES (?, ?)');
+        $query->bind_param('ss', $email, $hashed_password);
+        $query->execute();
+    
+        $response['status'] = "success";
+        $response['message'] = "User $email was created successfully.";
+    }
+    
+    echo json_encode($response);
+}
+
+// Get and display userinfo depending on the ID
+elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+    if (!isset($_GET['user_id'])) {
+        $response = [
+            'status' => 'error',
+            'message' => 'user_id is missing'
+        ];
+        echo json_encode($response);
+        exit;
+    }
+
+    $user_id = $_GET['user_id'];
+
+    $stmt = $mysqli->prepare("SELECT * FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $userInfo = [];
+        while ($row = $result->fetch_assoc()) {
+            $userInfo[] = $row;
+        }
+        $response = [
+            'status' => 'success',
+            'user_info' => $userInfo
+        ];
+    } else {
+        $response = [
+            'status' => 'error',
+            'message' => 'No user found with the given ID'
+        ];
+    }
+
+    echo json_encode($response);
+}
