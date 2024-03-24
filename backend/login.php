@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $response = array();
  
-    $check_user = $mysqli->prepare('SELECT user_id, email, password FROM users WHERE email=?');
+    $check_user = $mysqli->prepare('SELECT user_id, email, password, account_type FROM users WHERE email=?');
     $check_user->bind_param('s', $email);
     $check_user->execute();
     $check_user->store_result();
-    $check_user->bind_result($user_id, $email, $hashed_password);
+    $check_user->bind_result($user_id, $email, $hashed_password, $account_type);
     $check_user->fetch();
     $num_rows = $check_user->num_rows();
 
