@@ -2,14 +2,16 @@ import React from "react";
 import "./style.css";
 
 import Header from "./components/Header";
-import Post from "./components/Post";
+import AddPost from "./components/AddPost";
+import Posts from "./components/Posts";
 
 const Home = () => {
   return(
     <div>
       <Header />
       <div className="main">
-        <Post />
+        <AddPost />
+        <Posts />
       </div>
     </div>
   );

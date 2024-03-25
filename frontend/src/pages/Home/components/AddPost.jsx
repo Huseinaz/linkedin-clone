@@ -1,17 +1,17 @@
 import React from 'react'
 import profile from '../../Assets/profile.jpg';
 
-const Post = () => {
+const AddPost = () => {
   return (
-    <div className="post-box">
-      <div className="post_profile">
+    <div className="add_post-box">
+      <div className="add_post_profile">
           <img src={profile} alt="profile" />
         </div>
-        <div className="post">
+        <div className="add_post">
           <input type="text" placeholder="Start a post" />
         </div>
     </div>
   )
 }
 
-export default Post
+export default AddPost
