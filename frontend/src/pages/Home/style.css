@@ -1,0 +1,71 @@
+* {
+  background-color: #d3dde2;
+}
+
+.header {
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 16px 80px;
+  width: 100vw;
+  height: 10vh;
+}
+
+.header_container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo {
+  background-color: #fff;
+  flex-grow: 0;
+  margin-right: 1rem; /* Add margin for spacing */
+}
+
+.header_logo img {
+  width: 40px;
+  height: auto;
+}
+
+.header_search {
+  background-color: #fff;
+  display: flex;
+  flex-grow: 1;
+  position: relative; /* For search icon positioning */
+}
+
+.header_search input {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem 0.5rem 3rem; /* Adjust padding for icon */
+  width: 40%;
+  font-size: 1rem;
+}
+
+.header_nav {
+  display: flex;
+}
+
+.header_nav-list {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.header_nav-item {
+  background-color: #fff;
+  margin: 0 1rem;
+}
+
+.header_nav-item a {
+  background-color: #fff;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
