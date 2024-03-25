@@ -1,0 +1,57 @@
+header {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 130px;
+  height: auto;
+}
+
+form {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 20px;
+  margin: 20px auto;
+  width: 400px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  background-color: #0a66c2;
+  color: white;
+  font-size: large;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.p-gray {
+  padding: 5px 0 20px 0;
+}
+
+.p-blue {
+  padding: 5px 0 20px 0;
+  color: #0a66c2;
+}
+
+.join {
+  text-align: center;
+}
+
+.join span {
+  color: #0a66c2;
+}
