@@ -2,7 +2,8 @@ import "./styles/utilities.css";
 import "./styles/colors.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Authentication from "./pages/Authentication";
+import Authentication from "./pages/Authentication/index";
+import Register from "./pages/Authentication/Register";
 import { useEffect } from "react";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Authentication />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>
