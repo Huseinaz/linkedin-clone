@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import logo from '../Assets/Linkedin-Logo.png';
+import { useNavigate } from "react-router-dom";
 
 import './style.css'
 
 const Authentication = () => {
 
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

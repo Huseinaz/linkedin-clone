@@ -1,7 +1,13 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
+
 import profile from '../../Assets/intalio_logo.jpeg';
 
-const Jobs = () => {
+const Jobs = ({job}) => {
+
+  const navigate = useNavigate();
+  const { company_id, title, description, post_date } = job;
+
   return (
     <div className="job-box">
       <div className='info'>
@@ -10,13 +16,13 @@ const Jobs = () => {
         </div>
         <div>
           <div className='title'>
-            Software Engineer
+            {title}
           </div>
           <div className='company_name'>
-            Intalio
+            {company_id}
           </div>
           <div className='description'>
-            Description
+            {description}
           </div>
         </div>
       </div>
