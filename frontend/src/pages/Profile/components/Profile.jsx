@@ -6,10 +6,9 @@ const Profile = () => {
     <div className="user-profile">
       <img src={profile} className="user-profile__picture" alt='' />
       <div className="user-profile__info">
-        <p className="user-profile__name">Your Name</p>
-        <p className="user-profile__title">Your Title (optional)</p>
+        <p className="user-profile__name">hussein abou zeinab</p>
+        <p className="user-profile__title">student</p>
       </div>
-      {/* Add dropdown menu component here (optional) */}
     </div>
   )
 }

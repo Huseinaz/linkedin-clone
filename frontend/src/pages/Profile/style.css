@@ -88,10 +88,10 @@
 }
 
 .user-profile__name {
-  font-weight: 600; /* Bold name */
+  font-weight: 600;
 }
 
 .user-profile__title {
-  font-size: 0.9rem; /* Smaller font size for title */
-  color: #b3b3b3; /* Light gray color for title */
+  font-size: 0.9rem;
+  color: #b3b3b3;
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../../Assets/LinkedIn_icon.jpg';
 
+import { Link } from 'react-router-dom';
+
 const Header = () => {
   return (
     <header className="header">
@@ -14,22 +16,22 @@ const Header = () => {
         <nav className="header_nav">
           <ul className="header_nav-list">
             <li className="header_nav-item">
-              <a href="#">Home</a>
+              <Link to="/Home">Home</Link>
             </li>
             <li className="header_nav-item">
-              <a href="#">My Network</a>
+              <Link to="">My Network</Link>
             </li>
             <li className="header_nav-item">
-              <a href="#">Jobs</a>
+              <Link to="/Jobs">Jobs</Link>
             </li>
             <li className="header_nav-item">
-              <a href="#">Messaging</a>
+              <Link to="/">Messaging</Link>
             </li>
             <li className="header_nav-item">
-              <a href="#">Notifications</a>
+              <Link to="/">Notifications</Link>
             </li>
             <li className="header_nav-item">
-              <a href="#">Me</a>
+              <Link to="/Profile">Me</Link>
             </li>
           </ul>
         </nav>
