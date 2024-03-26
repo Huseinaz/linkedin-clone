@@ -6,6 +6,9 @@ import Authentication from "./pages/Authentication/index";
 import Register from "./pages/Authentication/Register";
 import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
+import Profile from "./pages/Profile";
+
+
 import { useEffect } from "react";
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Jobs" element={<Jobs />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
